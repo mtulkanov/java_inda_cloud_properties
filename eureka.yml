@@ -2,8 +2,6 @@ server:
   port: 8761
 
 spring:
-  application:
-    name: eureka-server
   output:
     ansi:
       enabled: always
@@ -16,3 +14,9 @@ eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
