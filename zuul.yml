@@ -1,0 +1,5 @@
+zuul:
+  ignoredServices: "*"
+  routes:
+    pc: /pc/**
+    po: /po/**
