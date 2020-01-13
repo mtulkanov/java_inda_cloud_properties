@@ -9,7 +9,6 @@ spring:
     mongodb:
       host: mongo
   kafka:
-    enable: true
     bootstrapServers:
       - 'kafka:9092'
       producer:
