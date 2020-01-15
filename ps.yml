@@ -1,0 +1,38 @@
+server:
+  port: 8080
+
+spring:
+  output:
+    ansi:
+      enabled: always
+  data:
+    mongodb:
+      host: mongo
+  kafka:
+    enable: true
+    bootstrapServers:
+      - 'kafka:9092'
+    producer:
+      valueSerializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      valueDeserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      groupId: my_group_id
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: "*"
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka1:8761/eureka, http://eureka2:8761/eureka
+
+pcurl:
+  pc:8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
